@@ -1,21 +1,22 @@
 /* eslint-disable prettier/prettier */
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { CreatePostDto } from '../dto/createPost.dto';
-// import Post from './post.interface';
-import { Post } from '../interface/post.interface';
 import { UpdatePostDto } from '../dto/updatePost.dto';
+import { Post } from '../interface/post.interface';
 
 @Injectable()
 export default class PostsService {
     private lastPostId = 0;
-    private posts: Post[] = [{ id: 1, content: 'asd', title: 'xc' }];
+    // private posts: Post[] = [{ id: 1, content: 'asd', title: 'xc' }];
+    private posts: Post[] = [];
+
     // model of Posts
     // id: number;
     // content: string;
     // title: string;
 
     getAllPosts() {
-        console.log(this.posts);
+        console.log('service: ', this.posts);
         return this.posts;
     }
 
