@@ -3,9 +3,11 @@ import { Module } from '@nestjs/common';
 import { PostsModule } from './posts/posts.module';
 import { ConfigModule } from '@nestjs/config';
 import * as Joi from '@hapi/joi';
- 
+import { DatabaseModule } from './database.module';
+
 @Module({
   imports: [
+    DatabaseModule,
     PostsModule,
     ConfigModule.forRoot({
       validationSchema: Joi.object({
@@ -27,4 +29,4 @@ import * as Joi from '@hapi/joi';
   controllers: [],
   providers: [],
 })
-export class AppModule {}
+export class AppModule { }
